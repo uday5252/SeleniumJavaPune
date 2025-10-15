@@ -1,0 +1,124 @@
+
+ 1. Restaurant Order Analysis
+
+A restaurant keeps track of all its food orders. Each order contains the `item`, `pricePerItem`, and `quantity`.
+The manager wants to calculate the total sales from only those orders where the bill amount per order exceeds ₹1000.
+
+Input:
+
+```js
+const foodOrders = [
+  { item: 'Burger', pricePerItem: 250, quantity: 3 },
+  { item: 'Pizza', pricePerItem: 600, quantity: 2 },
+  { item: 'Pasta', pricePerItem: 400, quantity: 1 },
+  { item: 'Sandwich', pricePerItem: 200, quantity: 4 }
+];
+```
+
+Expected Output:
+
+```js
+Total Sales = 2400
+```
+
+
+
+ 2. Car Rental Summary
+
+A car rental company stores daily rentals as objects with `model`, `ratePerDay`, and `daysRented`.
+You need to find the total revenue generated from only those rentals where the total rent (rate × days) is above ₹5000.
+
+Input:
+
+```js
+const rentals = [
+  { model: 'SUV', ratePerDay: 2000, daysRented: 2 },
+  { model: 'Sedan', ratePerDay: 1500, daysRented: 3 },
+  { model: 'Hatchback', ratePerDay: 1000, daysRented: 2 },
+  { model: 'Luxury', ratePerDay: 4000, daysRented: 1 }
+];
+```
+
+Expected Output:
+
+```js
+Total Revenue = 10500
+```
+
+
+
+ 3. Student Scholarship Calculation
+
+A university awards scholarships to students based on their grades and fee amounts.
+Each student has a `fee` and `grade` (out of 10).
+The scholarship amount is calculated as a percentage of the fee depending on the grade.
+Find the total scholarship amount for students whose scholarship is greater than ₹5000.
+
+Input:
+
+```js
+const students = [
+  { name: 'Riya', fee: 30000, grade: 9 },
+  { name: 'Arjun', fee: 40000, grade: 7 },
+  { name: 'Kiran', fee: 25000, grade: 6 },
+  { name: 'Meena', fee: 35000, grade: 8 }
+];
+```
+
+Expected Output:
+
+```js
+Total Scholarship = 11600
+```
+
+
+
+ 4. Real Estate Commission Report
+
+A real estate agency earns a commission from each property sold.
+Each sale has a `propertyPrice` and `commissionRate` (in %).
+The agency wants the total commission from sales where the commission earned is above ₹50,000.
+
+Input:
+
+```js
+const sales = [
+  { propertyPrice: 800000, commissionRate: 5 },
+  { propertyPrice: 600000, commissionRate: 8 },
+  { propertyPrice: 300000, commissionRate: 6 },
+  { propertyPrice: 1000000, commissionRate: 4 }
+];
+```
+
+Expected Output:
+
+```js
+Total Commission = 98000
+```
+
+
+
+5. Travel Package Profits
+
+A travel company offers tour packages, each with `basePrice`, `numPeople`, and `discount` (in %).
+You must calculate the total profit from packages whose final total (after discount) is above ₹10,000.
+
+Input:
+
+```js
+const packages = [
+  { basePrice: 5000, numPeople: 3, discount: 10 },
+  { basePrice: 4000, numPeople: 4, discount: 15 },
+  { basePrice: 7000, numPeople: 2, discount: 5 },
+  { basePrice: 9000, numPeople: 1, discount: 0 }
+];
+```
+
+Expected Output:
+
+```js
+Total Profit = 23650
+```
+
+
+
