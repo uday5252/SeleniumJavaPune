@@ -85,3 +85,10 @@ in JS, a variable can be created in 3 ways:-
 1) using var keyword
 2) usign let keyword
 3) using const keyword
+
+
+var age = 40
+let username = "Raju"
+const city = "Bangalore"
+// back ticks
+console.log(`The name of the person is ${username}, age is ${age} and city is ${city}`);
