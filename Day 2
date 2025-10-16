@@ -1,255 +1,88 @@
+
+const btn = document.querySelector("button")
+const input = document.querySelector("input")
+const ol = document.querySelector("ol")
+
+
+function loadTasks()
+{
+    if(localStorage.getItem("myTasks") != null)
+    {
+            const myArr = JSON.parse(localStorage.getItem("myTasks"))
+            for(let i of myArr)
+            {
+                const myLi = document.createElement("li")
+                myLi.textContent = i
+                ol.append(myLi)
+            }
+    }
+
+    
+}
+
+loadTasks()
+
+
+let alltasks = []
+
+btn.addEventListener("click", function()
+{
+    // LOGIC 
+    let enteredTask = input.value
+    alltasks.push(enteredTask)
+
+    localStorage.setItem("myTasks", JSON.stringify(alltasks))
+    
+    // from the local storage ==> read those tasks will be kept inside
+    // the li tag and that li tag will be appended to the ol tag
+    const taskArr = 
+    JSON.parse(localStorage.getItem("myTasks")) // '[ ............. ]'
+
+    // console.log(taskArr) ['dancing', 'playing']
+    
+    ol.textContent = ""
+    for(let i of taskArr)
+    {
+        const myLi = document.createElement("li")
+        // myLi.textContent = `${i}<button>Delete</button>` 
+        myLi.innerHTML = `${i}<i class="fa-solid fa-trash"></i>` 
+        ol.append(myLi)
+        
+        const deleteIcn = myLi.querySelector("i")
+        deleteIcn.addEventListener("click", function()
+        {
+            myLi.remove()
+        })
+    }
+
+    input.value = ""
+
 <html>
     <head>
         <title>First HTML Document</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     </head>
 
-    <!-- div is a block level tag -->
     <body>
         
-        <form method="post">
-            <div>
-                <label>Enter Username</label>
-                <input type="text" name="username" placeholder="enter the username...." />
-            </div>
+       <h1>Todo Application</h1>
 
-            <div>
-                <label>Enter Password</label>
-                <input type="password" name="password" placeholder="enter the password...." />
-            </div>
+       <input type="text" placeholder="Enter the task...." />
+       <button>Add Task</button>
 
-            <div>
-                <input type="submit" value="Login" />
-            </div>
-        </form>
+       <i></i>
+
+       <ol>
+        
+       </ol>
 
 
+       <script src="app.js"></script>
     </body>
 
 </html>
+    
 
-
-1) collect that information and store that infromation
-store something ==> variables
-The details will be submitted only from a form
-Whenever we create a form in HTML, we need to specify
-either GET method OR POST method
-GET makes the data to be visible in the URL, whereas
-POST doesnt do that
-
-
-====================================================
-
-// var age = 40
-// let username = "Raju"
-// const city = "Bangalore"
-
-// console.log(age, username, city);
-
-// const ==> constant ==> fixed
-
-// const city = "Bangalore"
-// city = "Mumbai"
-// console.log(city);
-
-// let city = "Bangalore"
-// city = "Mumbai"
-// console.log(city);
-
-// block ==> {}
-
-// let has block scope and var has global scope
-
-// for(let i = 0; i < 5; i++)
-// {
-//     console.log(i)
-// }
-
-// console.log(i)
-
-// for(var i = 0; i < 5; i++)
-// {
-//     console.log(i)
-// }
-
-// console.log(i)
-
-NOTE: id and class allows you to identify any HTML element
-uniquely, but id is always unique for every HTML element, whereas class can be repeated for multiple HTML elements
-
-Javascript
-Variables:-
-Storing the data
-1) Create a variable
-2) Store the data
-in JS, a variable can be created in 3 ways:-
-1) using var keyword
-2) usign let keyword
-3) using const keyword
-
-
-var age = 40
-let username = "Raju"
-const city = "Bangalore"
-// back ticks
-console.log(`The name of the person is ${username}, age is ${age} and city is ${city}`);
-
-============================================================================================
-
-// functions in javascript
-
-
-// Function Decalration
-
-// // function calling
-// let result = add(10, 20)
-// console.log(result)
-
-// // function creation / definition
-// function add(num1, num2)
-// {
-//     return num1 + num2
-// }
-
-
-// Function Expression
-
-// let add = function(num1, num2)
-// {
-//     return num1 + num2
-// }
-
-// const result = add(100, 200)
-// console.log(result)
-
-
-
-let add = (num1, num2) => num1 + num2
-
-
-const result = add(50, 60)
-console.log(result)
-
-
-
-
-A function in javascript can be created in 3 ways:-
-
-1) using function declaration
-2) using function expression
-3) using arrow function
-In javascript, we can create varaibales that can also store
-a function in it
-The main difference between Function Declaration and 
-Function Expression is HOISTING.
-Whenever we have Function Declaration present in our
-program, javascript will implement HOISTING mechanism on not.
-
-HOSITING is a mechanism in javascript where the function creation part of the function decalration is automatiocally moved to the top of the file.
-=================================================================================================
-
-// Arrays
-// An arrays can store multiple values which is of same type or different type
-
-// const data = [10, 20, 30, 40, 50, "Raju", "Bangalore", true, false]
-// console.log(data[0])
-
-// Write a program to multiple each element of the array by 2 
-
-// const data = [10, 20, 30, 40, 50, 60, 70, 90]
-
-// data.forEach((a, b, c)=>
-// {
-//     console.log(a * 2)
-// })
-
-
-const data = [10, 20, 30]
-
-// result  ==> [20, 40, 60]
-const result = data.map((a, b, c)=>
-{
-    return a * 2
 })
-
-console.log(result)
-
-// const data = [10, 20, 30, 40, 50]
-
-// console.log(data[0] * 2)
-// console.log(data[1] * 2)
-// console.log(data[2] * 2)
-// console.log(data[3] * 2)
-// console.log(data[4] * 2)
-==========================================
-// const data = [10, 20, 30]
-
-// const result = data.filter((a, b, c)=>
-// {
-//     if(a > 25)
-//     {
-//         return a * 2
-//     }
-// })
-
-// console.log(result)
-// // [60]
-
-
-// WAP to print out all the elements which are greater than 25 and then multiply each of them by 2
-
-// [60, 80, 100] ==> output
-
-// const data = [10, 20, 30, 40, 50]
-
-// const result = data.filter(function(ele)
-// {
-//     return ele > 25
-// }).map(function(ele)
-// {
-//     return ele * 2
-// })
-
-// console.log(result)
-
-
-// const data = [10, 20, 30, 40, 50, 60, 70]
-// const result = data.filter((ele)=>ele > 25).map((ele)=>ele * 2)
-// console.log(result)
-
-
-// reduce()
-// Map(5) ==> 5
-// Filter(5) ==> <= 5
-// Reduce(5, 50, 500) ==> 1
-
-// WAP to filter out all the even elements present in the array
-// and add those elements with number 50 and find the total sum
-
-// const data = [10, 21, 30, 41, 50, 61, 70]
-
-// [10, 30, 50, 70]
-
-// [60, 80, 100, 120]
-
-// 360
-
-
-const data = [10, 21, 30, 41, 50, 61, 70, 10, 40]
-
-// [60, 80, 100, 120]
-// a = 360, b = 
-
-const result = data.filter((ele) => ele % 2 == 0).map((ele) => ele + 50).reduce((a, b) =>a + b)
-
-console.log(result)
-
-If we want to perform same operation on each and every
-element present in the array then we can use map()
-forEach(function exp OR arrow function)
-forEach() and map() ==> 99.99% same
-map() ==> Input array elements count == Output array
-elements count
-filter() ==> Input array elements count >= Output array 
-elements count
-filter() can only filter the existing data but on that filtered
-data, it cant do any operation
