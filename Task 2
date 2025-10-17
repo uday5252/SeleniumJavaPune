@@ -1,0 +1,35 @@
+Encapsulation in Action — Library Management (Tracking Books)
+
+Implement a **`Library`** class in JavaScript demonstrating **encapsulation**.
+
+**Requirements:**
+
+* Maintain a **private property** `books` (number of books), which starts at `0`.
+* Provide the following methods:
+
+  * `addBook(amount: number)` → Adds books if `amount > 0`.
+  * `borrowBook(amount: number)` → Reduces books if enough are available.
+  * `getBooks()` → Returns total books available.
+
+**Input Format:**
+
+* First line → Integer (number of operations)
+* Next lines → Operation (`add`, `borrow`, or `books`)
+
+**Sample Input:**
+
+```
+5
+add 10
+borrow 3
+books
+borrow 9
+books
+```
+
+**Sample Output:**
+
+```
+7
+7
+```
