@@ -1,0 +1,71 @@
+// Rest Operator
+
+// function collect(...a)
+// {
+//     console.log(a)
+// }
+
+// collect(10, 20, 30, 40, 50)
+
+
+// Spread Operator
+
+// function collect(a, b, c, d)
+// {
+//     console.log(a, b, c, d)
+// }
+
+// collect(...[10, 20, 30, 40])
+
+
+// const data = [10, 20, 30, 40, 50]
+
+// const firstEle = data[0]
+// const secondEle = data[1]
+// const thirdEle = data[2]
+// const fourthEle = data[3]
+// const fifthEle = data[4]
+
+// console.log(firstEle, secondEle, thirdEle, fourthEle, fifthEle);
+
+// Array Destructuring(separating)
+
+// const data = [10, 20, 30, 40, 50]
+// const [a, b, c, d, e] = data
+// console.log(c)
+
+
+// const data = [10, 20, 30, 40, 50]
+// const [a, b, , , c] = data
+// console.log(c)
+
+
+// const data = [10, 20, 30, 40, 50]
+// const [ , b, a, ...info ] = data
+// console.log(a)
+// console.log(b)
+// console.log(info)
+
+
+// const data = [10, 20, 30, 40, 50, 60]
+// const [ a, ...info, b ] = data
+// console.log(a) 
+// console.log(b)
+// console.log(info)
+
+// const arr1 = [10, 20, 30]
+// const arr2 = [40, 50, 60]
+
+// const arr3 = [ ...arr1, ...arr2 ]
+// console.log(arr3)
+
+// Object Destructuring
+
+// const person = {
+//     name: "Raju",
+//     age: 40,
+//     city: "Bangalore"
+// }
+
+// const { name, age, city } = person
+// console.log(name, age, city)
