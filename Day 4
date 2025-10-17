@@ -131,3 +131,28 @@ class BankAccount
 const account = new BankAccount("1234567890", "Raju", 5000)
 account.setBalance(-100000)
 console.log(account.getBalance())
+
+
+
+// Method Overiding 
+// If the child class is not happy with the content of the parent class method
+// then the child class can provide its own implementation / logic of the parent class method
+
+class Demo
+{
+    display()
+    {
+        console.log("Hello from Demo class display method");
+    }
+}
+
+class Launch extends Demo
+{
+    display()
+    {
+        console.log("Hello from Launch class display method");
+    }
+}
+
+const l = new Launch()
+l.display()
