@@ -97,3 +97,37 @@ const employee3 = new Employee("John", 35, "Bangalore")
 employee1.displayDetails()
 employee2.displayDetails()
 employee3.displayDetails()
+
+// Encapsulation
+// providing security to the most important component of the object
+
+class BankAccount
+{
+    accountHolderName
+    accountNumber
+    #balance // private property
+
+    constructor(accountNumber, accountHolderName, balance)
+    {
+        this.accountNumber = accountNumber
+        this.accountHolderName = accountHolderName
+        this.#balance = balance // private property
+    }
+
+    setBalance(newBalance)
+    {
+        if(newBalance > 0)
+        {
+            this.#balance = this.#balance +  newBalance
+        }
+    }
+
+    getBalance()
+    {
+        return this.#balance
+    }
+}
+
+const account = new BankAccount("1234567890", "Raju", 5000)
+account.setBalance(-100000)
+console.log(account.getBalance())
