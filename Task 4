@@ -1,0 +1,32 @@
+### Question 7: Inheritance — Zoo Animals
+
+Implement a simple zoo hierarchy using Javascript inheritance by creating two classes: **Animal** and **Lion**.
+
+**Requirements:**
+
+* Both classes should implement a method `getType()` that returns:
+
+  * `"Animal"` for the **Animal** class
+  * `"Lion"` for the **Lion** class (overrides parent)
+
+**Input Format:**
+
+* First line → Integer (number of entries)
+* Next lines → `"Animal"` or `"Lion"`
+
+**Sample Input:**
+
+```
+3
+Animal
+Lion
+Lion
+```
+
+**Sample Output:**
+
+```
+Animal
+Lion
+Lion
+```
