@@ -1,0 +1,177 @@
+
+
+🎬 Question Explanation: Movie Ticket Booking System (OOP)
+
+You have to build a program to handle movie ticket bookings — but the key is that you must use Object-Oriented Programming (OOP).
+
+
+
+🧱 What You’re Building
+
+You’re designing a system that can take multiple movie bookings.
+
+There are two types of bookings:
+
+1. Regular Booking
+2. Premium Booking
+
+Each booking has:
+
+* A movie name
+* A number of seats
+* One extra feature, depending on the type of booking.
+
+
+
+🧾 What Input You’ll Get
+
+You’ll get:
+
+1. The number of bookings (let’s say `n`)
+2. Then `n` lines, where each line describes one booking in this format:
+
+   ```
+   BookingType MovieName Seats ExtraProperty
+   ```
+
+
+
+🧩 Example
+
+```
+3
+Regular Inception 2 Yes
+Premium Interstellar 3 Yes
+Regular Avatar 4 No
+```
+
+This means:
+
+1️⃣ Regular booking for Inception, 2 seats, snacks = Yes
+2️⃣ Premium booking for Interstellar, 3 seats, lounge access = Yes
+3️⃣ Regular booking for Avatar, 4 seats, snacks = No
+
+
+
+🧠 What You Need to Do
+
+You must:
+
+1. Create classes to represent each type of booking:
+
+   * A base class for common properties (movie name, seats)
+   * Separate subclasses for `Regular` and `Premium` types
+
+2. Each subclass should decide how to display details using its own logic.
+
+
+
+🖨️ What You Must Print (Output)
+
+For every booking, print a line in this format:
+
+```
+Booking: MovieName - X seats - [Extra Details]
+```
+
+Where:
+
+* Regular booking → “Snacks Included” or “No Snacks”
+* Premium booking → “Lounge Access” or “No Lounge Access”
+
+=================================================================================================
+
+ 🚗 Problem Statement: Vehicle Rental System
+
+You are building a system to manage vehicle rentals for a travel company using Object-Oriented Programming principles.
+
+
+
+ Input Format
+
+* First line → integer `n` (number of rentals)
+* Next `n` lines → each line contains rental details in the format:
+
+  ```
+  VehicleType VehicleName Days ExtraProperty
+  ```
+
+
+
+ Details
+
+* `VehicleType` → "Car" or "Bike" or "Truck"
+* `VehicleName` → string (≤ 50 characters)
+* `Days` → integer (> 0)
+* `ExtraProperty`:
+
+  * For Car → `AC` (Yes / No)
+  * For Bike → `Helmet` (Yes / No)
+  * For Truck → `Helper` (Yes / No)
+
+
+
+ Output Format
+
+For each rental, print the details in this format:
+
+```
+Rental: VehicleName - X days - [Extra Details]
+```
+
+
+
+ Example Input
+
+```
+3
+Car HondaCity 5 Yes
+Bike Yamaha 2 No
+Truck Tata 4 Yes
+```
+
+
+
+ Example Output
+
+```
+Rental: HondaCity - 5 days - AC Included
+Rental: Yamaha - 2 days - No Helmet Provided
+Rental: Tata - 4 days - Helper Included
+```
+
+
+
+ Requirements (OOP-based)
+
+1. Create a base class `Vehicle`
+
+   * Properties: `vehicleName`, `days`
+   * Method: `getDetails()` → should be overridden by subclasses.
+
+2. Create subclasses:
+
+   * `Car` (extra property: AC)
+   * `Bike` (extra property: Helmet)
+   * `Truck` (extra property: Helper)
+
+3. Each subclass must override `getDetails()` to print type-specific information.
+
+
+
+ 🧠 Concept Tested
+
+* Polymorphism:
+  Each subclass provides its own version of `getDetails()`.
+
+* Inheritance:
+  All subclasses share properties from `Vehicle`.
+
+* Encapsulation:
+  Each object manages its own state.
+
+
+
+Would you like me to provide the full JavaScript OOP solution for this “Vehicle Rental System” next?
+
+
