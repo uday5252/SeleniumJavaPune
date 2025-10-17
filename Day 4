@@ -156,3 +156,39 @@ class Launch extends Demo
 
 const l = new Launch()
 l.display()
+
+
+// Polymorphism
+// one reference variable calling multiple forms of methods
+
+class Animal
+{
+    speak()
+    {
+        console.log("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal
+{
+    speak()
+    {
+        console.log("Dog barks");
+    }
+
+}
+
+class Cat extends Animal
+{
+    speak()
+    {
+        console.log("Cat meows");
+    }
+}
+
+const data = [ new Animal(), new Dog(), new Cat() ]
+
+data.forEach(function(ele)
+{
+    ele.speak()
+})
