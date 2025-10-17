@@ -1,50 +1,50 @@
 Question 6: Encapsulation — Wallet Management System 💰
 
-You are designing a **digital wallet system** for a mobile payment app.
-Each user has a **wallet** that securely manages their money — allowing them to add funds, spend money, and check their balance.
+You are designing a digital wallet system for a mobile payment app.
+Each user has a wallet that securely manages their money — allowing them to add funds, spend money, and check their balance.
 
-To ensure security and proper data handling, you need to implement this using **encapsulation** in JavaScript.
-
----
-
-### 🧩 Scenario:
-
-Imagine you are building a **Wallet** class for a fintech app like Paytm or Google Pay.
-
-* The wallet starts with **₹0**.
-* Users can **add money** to their wallet, **spend money**, and **check their balance**.
-* However, you must ensure that users cannot directly access or modify the balance — it should be **private**.
+To ensure security and proper data handling, you need to implement this using encapsulation in JavaScript.
 
 ---
 
-### 🧱 Requirements:
+🧩 Scenario:
 
-Create a class **`Wallet`** with the following specifications:
+Imagine you are building a Wallet class for a fintech app like Paytm or Google Pay.
 
-* **Private property:**
-
-  * `amount` → starts at `0`.
-
-* **Methods:**
-
-  1. **`addMoney(x)`** → Adds money only if `x > 0`.
-  2. **`spendMoney(x)`** → Deducts money only if `x > 0` **and** `x ≤ balance`.
-  3. **`getAmount()`** → Returns the current wallet balance.
+ The wallet starts with ₹0.
+ Users can add money to their wallet, spend money, and check their balance.
+ However, you must ensure that users cannot directly access or modify the balance — it should be private.
 
 ---
 
-### 🧮 Input Format:
+🧱 Requirements:
 
-* **First line:** Integer → number of operations
-* **Next lines:** Each line contains one of the following operations:
+Create a class `Wallet` with the following specifications:
 
-  * `"add X"` → Add ₹X to wallet
-  * `"spend X"` → Spend ₹X from wallet
-  * `"amount"` → Display current balance
+ Private property:
+
+   `amount` → starts at `0`.
+
+ Methods:
+
+  1. `addMoney(x)` → Adds money only if `x > 0`.
+  2. `spendMoney(x)` → Deducts money only if `x > 0` and `x ≤ balance`.
+  3. `getAmount()` → Returns the current wallet balance.
 
 ---
 
-### 📥 Sample Input:
+🧮 Input Format:
+
+ First line: Integer → number of operations
+ Next lines: Each line contains one of the following operations:
+
+   `"add X"` → Add ₹X to wallet
+   `"spend X"` → Spend ₹X from wallet
+   `"amount"` → Display current balance
+
+---
+
+📥 Sample Input:
 
 ```
 4
@@ -56,7 +56,7 @@ spend 100
 
 ---
 
-### 📤 Sample Output:
+📤 Sample Output:
 
 ```
 60
