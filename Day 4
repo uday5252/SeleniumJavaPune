@@ -69,3 +69,31 @@
 
 // const { name, age, city } = person
 // console.log(name, age, city)
+
+
+
+class Employee
+{
+
+    constructor(name, age, city)
+    {
+        this.name = name
+        this.age = age
+        this.city = city
+    }
+
+    displayDetails()
+    {
+        console.log(`The name of the employee is ${this.name}, age is ${this.age} and city is ${this.city}`);
+    }
+}
+
+
+// 3 objects
+const employee1 = new Employee("Raju", 30, "Mumbai")
+const employee2 = new Employee("Mary", 28, "Chennai")
+const employee3 = new Employee("John", 35, "Bangalore")
+
+employee1.displayDetails()
+employee2.displayDetails()
+employee3.displayDetails()
