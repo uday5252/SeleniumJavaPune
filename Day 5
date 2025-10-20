@@ -23,23 +23,6 @@ function fetchProducts()
 fetchProducts()
 
 
-create database employee_db;
-use employee_db;
-create table employees(id int primary key, 
-name varchar(20) not null,
-age int not null,
-salary int not null);
-
-insert into employees 
-values(100, "Raju", 40, 50000);
-
-select * from employees;
-
-insert into employees 
-values(200, "Cook", 50, 70000);
-
-insert into employees(id, name) 
-values(300, "Raju");
 SELECT * FROM Customers where CustomerID=5; 
 
 SELECT * FROM Customers limit 10; 
@@ -55,4 +38,26 @@ SELECT CustomerID, CustomerName, Address FROM Customers;
  
 SELECT COUNT(CustomerName) as CustomerCount FROM Customers where Country = 'Argentina'; 
 
-        
+MIN(), MAX(), AVG(), COUNT(), SUM() ==> Aggregate Functions ==> are the functions that takes
+multiple values as input and print single value as the output
+
+
+
+select MIN(Price) from Products;
+
+select MAX(Price) from Products;
+select MAX(Price) as LargestPrice from Products;
+select MAX(Price), CategoryID from Products group by CategoryID;
+
+select COUNT(OrderID), EmployeeID from Orders group by EmployeeID;
+SELECT SUM(Price) FROM Products;
+SELECT CategoryID, SUM(Price) as TotalPrice FROM Products group by CategoryID;
+SELECT CategoryID, AVG(Price) as TotalPrice FROM Products group by CategoryID;
+
+
+SELECT COUNT(CustomerName) as CustomerCount, Country FROM Customers 
+where CustomerID > 20 
+group by Country
+having COUNT(CustomerName) > 5
+order by Country DESC
+limit 1;
