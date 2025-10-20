@@ -21,3 +21,23 @@ function fetchProducts()
 }
 
 fetchProducts()
+
+
+create database employee_db;
+use employee_db;
+create table employees(id int primary key, 
+name varchar(20) not null,
+age int not null,
+salary int not null);
+
+insert into employees 
+values(100, "Raju", 40, 50000);
+
+select * from employees;
+
+insert into employees 
+values(200, "Cook", 50, 70000);
+
+insert into employees(id, name) 
+values(300, "Raju");
+
