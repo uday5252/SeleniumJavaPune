@@ -1,0 +1,23 @@
+
+function fetchProducts()
+{
+    const data = fetch("https://fakestoreapi.com/products")
+    data.then(function(productsData)
+    {
+        const myProducts = productsData.json() // 3 seconds
+        return myProducts
+    })
+    .then(function(result)
+    {
+        result.map(function(product)
+        {
+            console.log(product.title)
+        })
+    })
+    .catch(function(error)
+    {
+        console.log(error)        
+    })
+}
+
+fetchProducts()
