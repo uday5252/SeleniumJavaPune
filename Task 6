@@ -1,0 +1,37 @@
+
+
+| sale_id | customer_name | country | product | quantity | price_per_unit | sale_date  |
+| ------- | ------------- | ------- | ------- | -------- | -------------- | ---------- |
+| 1       | Rahul         | India   | Laptop  | 2        | 50000          | 2024-01-10 |
+| 2       | Emma          | USA     | Mobile  | 3        | 30000          | 2024-01-12 |
+| 3       | Raj           | India   | Laptop  | 1        | 52000          | 2024-02-15 |
+| 4       | John          | UK      | Tablet  | 4        | 25000          | 2024-03-18 |
+| 5       | Mary          | USA     | Laptop  | 1        | 55000          | 2024-03-20 |
+| 6       | Ravi          | India   | Mobile  | 5        | 28000          | 2024-04-22 |
+| 7       | Alex          | UK      | Laptop  | 3        | 51000          | 2024-05-10 |
+| 8       | Sneha         | India   | Tablet  | 2        | 24000          | 2024-05-18 |
+| 9       | Sophia        | USA     | Mobile  | 4        | 32000          | 2024-06-02 |
+| 10      | Raj           | India   | Laptop  | 2        | 52000          | 2024-07-01 |
+
+
+1️⃣ Show all records where quantity is greater than 2.
+2️⃣ Display total sales amount for each country.
+3️⃣ Show total sales per country where total sales are above ₹2,00,000.
+4️⃣ Find the average quantity sold for each product.
+5️⃣ List all sales from India, sorted by total amount in descending order.
+6️⃣ Display the top 3 highest sales based on total amount.
+7️⃣ Find the number of unique customers in each country who made purchases.
+8️⃣ Show countries having more than 2 customers.
+9️⃣ Find average sale amount per product where the average is more than ₹1,00,000.
+🔟 List customers and their total purchase amount in descending order of total spent.
+1️⃣1️⃣ Show the top 2 countries with the highest total sales.
+1️⃣2️⃣ Display the minimum, maximum, and average sale amount for each country.
+1️⃣3️⃣ Show all products whose total quantity sold is above 5.
+1️⃣4️⃣ Find the total number of sales made in each month.
+1️⃣5️⃣ Display all sales where total amount is between ₹50,000 and ₹1,00,000.
+1️⃣6️⃣ Show each country’s total sales, but only include those with average price per unit above ₹30,000.
+1️⃣7️⃣ Display the highest priced product sold in India.
+1️⃣8️⃣ Show the top 5 customers with the highest total quantity purchased.
+1️⃣9️⃣ List all customers who bought laptops, sorted by quantity descending.
+2️⃣0️⃣ Display the total sales per product, sorted alphabetically by product name.
+
