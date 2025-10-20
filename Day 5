@@ -61,3 +61,93 @@ group by Country
 having COUNT(CustomerName) > 5
 order by Country DESC
 limit 1;
+
+
+create database singlerow_db;
+
+use singlerow_db;
+
+create table employees(
+emp_id int,
+first_name varchar(20),
+last_name varchar(20),
+salary decimal(10,2),
+join_date date,
+bonus decimal(10,2)
+-- YYYY-MM-DD 
+);
+
+
+-- Insert 5 employees
+INSERT INTO employees (emp_id, first_name, last_name, salary, join_date, bonus) VALUES
+(1, 'John', 'Doe', 50000.00, '2022-03-15', 5000.00),
+(2, 'Jane', 'Smith', 60000.00, '2021-07-10', 6000.00),
+(3, 'Robert', 'Brown', 55000.00, '2023-01-05', 4000.00),
+(4, 'Emily', 'Davis', 70000.00, '2020-11-20', 7000.00),
+(5, 'Michael', 'Wilson', 65000.00, '2022-06-25', 5500.00);
+
+
+INSERT INTO employees (emp_id, first_name, last_name, salary, join_date) 
+VALUES(6, 'Cook', 'Shane', 40000.00, '2022-03-15');
+
+
+
+
+use singlerow_db;
+-- SELECT emp_id, salary as ActualSalary, ABS(salary - 60000) Salary_Diff
+-- FROM employees;
+-- SELECT emp_id, ROUND(salary/12, 2) as Monthly_Salary FROM employees;
+-- SELECT emp_id, CEIL(salary/12) as Monthly_Salary FROM employees;
+-- SELECT emp_id, FLOOR(salary/12) as Monthly_Salary FROM employees;
+-- SELECT emp_id, salary as Initial_Salary, 
+-- FLOOR(salary * POW(1 + 0.05, 5))  as Latest_Salary FROM employees;
+
+-- 100% ==> 1
+
+-- 50000 ==> 100%
+-- 52500 ==> 100% + 5% ==> (1 + 0.05)  ==> 1.05 ==> 105%
+
+
+-- select emp_id, CONCAT(first_name," ", last_name) as Full_Name from employees;
+-- select emp_id, first_name, LENGTH(first_name) as name_length 
+-- from employees;
+-- select emp_id, UPPER(first_name) as Capitalized_Name from employees;
+-- select emp_id, LOWER(first_name) as Capitalized_Name from employees;
+-- select emp_id, SUBSTRING(first_name, 1, 3) as Short_Name from employees;
+-- select emp_id, REPLACE(first_name, 'a', '@') as Masked_Name from employees;
+
+-- select first_name, salary, 
+-- IF(salary > 55000, "High", "Low") as Salary_Level 
+-- from employees;
+
+-- select first_name, salary, 
+-- CASE
+-- 	WHEN salary > 60000 THEN "Very High"
+-- 	WHEN salary > 50000 THEN "High"
+-- 	WHEN salary > 30000 THEN "Average"
+-- 	WHEN salary > 10000 THEN "Low"
+--   ELSE "Very Low"
+-- END as Salary_Category
+-- from employees;
+
+
+
+-- select *, IFNULL(bonus, 0) as bonus_value from employees;
+
+-- select first_name, join_date, 
+-- CURDATE() as Current_Datee,
+-- DATEDIFF(CURDATE(), join_date) as Days_Worked,
+-- DATE_ADD(join_date, INTERVAL 25 year) as Silver_Jubilee,
+-- YEAR(join_date) as Joining_Year,
+-- MONTH(join_date) as Joining_Month,
+-- DAY(join_date) as Joining_Date
+-- from employees;
+
+
+
+
+
+
+
+
+
