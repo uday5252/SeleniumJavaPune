@@ -40,4 +40,19 @@ values(200, "Cook", 50, 70000);
 
 insert into employees(id, name) 
 values(300, "Raju");
+SELECT * FROM Customers where CustomerID=5; 
 
+SELECT * FROM Customers limit 10; 
+
+SELECT * FROM Customers order by ContactName ASC limit 5; 
+
+        
+SELECT * FROM Customers order by Country ASC, ContactName ASC limit 5; 
+
+        
+SELECT CustomerID, CustomerName, Address FROM Customers; 
+
+ 
+SELECT COUNT(CustomerName) as CustomerCount FROM Customers where Country = 'Argentina'; 
+
+        
