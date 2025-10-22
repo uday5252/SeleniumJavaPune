@@ -60,5 +60,86 @@ revoke select on employees from "firstuser";
 
 
 
+=======================================================
+use employees_db;
+
+grant select on employees
+to "firstuser";
+flush privileges;
+
+grant create on students_db.*
+to "firstuser";
+flush privileges;
+
+
+-- grant create on students_db.*
+-- to "firstuser";
+
+-- revoke select on employees from "firstuser";
+
+
+
+
+
+
+create database management_db;
+
+use management_db;
+
+-- 1. Create Company table
+CREATE TABLE Company (
+    cid INT PRIMARY KEY,
+    cname VARCHAR(50) NOT NULL
+);
+
+-- 2. Insert data into Company
+INSERT INTO Company (cid, cname) VALUES
+(101, 'IBM'),
+(102, 'CG'),
+(103, 'TCS');
+
+-- 3. Create Employee table
+CREATE TABLE Employee (
+    eid INT PRIMARY KEY,
+    ename VARCHAR(50) NOT NULL,
+    eage INT,
+    ecity VARCHAR(50),
+    cmpID INT,
+    foreign key(cmpID) references
+    company(cid)
+);
+
+-- 4. Insert data into Employee
+INSERT INTO Employee (eid, ename, eage, ecity, cmpID) VALUES
+(1, 'Raju', 30, 'Pune', 101),
+(2, 'Cook', 35, 'Hyd', 101),
+(3, 'Sam', 32, 'Pune', 102);
+
+INSERT INTO Employee 
+(eid, ename, eage, ecity, cmpID) VALUES
+(4, 'Steve', 30, 'Pune', 205);
+
+select eid, ename, cname from employee inner join company
+on employee.cmpID = company.cid;
+
+
+-- select eid, ename, cname from employee join company
+-- on employee.cmpID = company.cid;
+
+-- select eid, ename, cname from employee left join company
+-- on employee.cmpID = company.cid;
+
+-- select eid, ename, cname from employee right join company
+-- on employee.cmpID = company.cid;
+
+
+
+
+
+-- select eid, ename, cname from employee left join company
+-- on employee.cmpID = company.cid
+-- union
+-- select eid, ename, cname from employee right join company
+-- on employee.cmpID = company.cid;
 
 
