@@ -1,0 +1,32 @@
+
+ Sample Table: `Employees`
+
+| emp_id | emp_name | department | salary | join_date  | manager_id |
+|  | -- | - |  | - | - |
+| 1      | Raju     | IT         | 50000  | 2020-01-10 | 3          |
+| 2      | Cook     | HR         | 40000  | 2019-03-15 | 3          |
+| 3      | Smith    | IT         | 80000  | 2018-07-20 | NULL       |
+| 4      | John     | Finance    | 55000  | 2021-06-01 | 5          |
+| 5      | Alice    | Finance    | 90000  | 2017-05-12 | NULL       |
+| 6      | Bob      | IT         | 60000  | 2022-02-18 | 3          |
+| 7      | David    | HR         | 45000  | 2020-09-30 | 2          |
+
+
+
+ Subquery Questions with Solutions
+
+
+
+1. Find employees who earn more than the average salary.
+2. Find employees who earn the highest salary.
+3. List employees who work in the same department as 'Raju'.
+4. Find employees whose salary is above the salary of 'John'.
+5. Find employees whose salary is equal to the minimum salary in HR department.
+6. List employees whose manager earns more than 70,000.
+7. Find employees who joined after the earliest joining date in IT department.
+8. List employees whose salary is greater than all HR employees’ salaries.
+9. Find employees whose salary is less than any Finance employee’s salary.
+10. Find employees who do not have a manager.
+11. Find employees whose salary is in the top 3 salaries.
+12. Find employees whose department has more than 2 employees.
+13. Find employees who earn more than their manager.
