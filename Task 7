@@ -1,0 +1,75 @@
+
+#### 1️⃣ Table: `departments`
+
+| dept_id | dept_name | location      |
+| ------- | --------- | ------------- |
+| 1       | HR        | New York      |
+| 2       | IT        | San Francisco |
+| 3       | Finance   | Chicago       |
+| 4       | Marketing | Boston        |
+
+#### 2️⃣ Table: `employees`
+
+| emp_id | emp_name | salary | dept_id | city          |
+| ------ | -------- | ------ | ------- | ------------- |
+| 101    | Alice    | 60000  | 1       | New York      |
+| 102    | Bob      | 75000  | 2       | San Francisco |
+| 103    | Charlie  | 50000  | 3       | Chicago       |
+| 104    | Diana    | 80000  | 2       | San Francisco |
+| 105    | Eve      | 45000  | NULL    | Miami         |
+| 106    | Frank    | 70000  | 4       | Boston        |
+| 107    | Grace    | 55000  | 3       | Chicago       |
+
+---
+
+### 💾 **Create & Insert Code**
+
+```sql
+CREATE TABLE departments (
+  dept_id INT PRIMARY KEY,
+  dept_name VARCHAR(30),
+  location VARCHAR(30)
+);
+
+INSERT INTO departments VALUES
+(1, 'HR', 'New York'),
+(2, 'IT', 'San Francisco'),
+(3, 'Finance', 'Chicago'),
+(4, 'Marketing', 'Boston');
+
+CREATE TABLE employees (
+  emp_id INT PRIMARY KEY,
+  emp_name VARCHAR(30),
+  salary DECIMAL(10,2),
+  dept_id INT,
+  city VARCHAR(30)
+);
+
+INSERT INTO employees VALUES
+(101, 'Alice', 60000, 1, 'New York'),
+(102, 'Bob', 75000, 2, 'San Francisco'),
+(103, 'Charlie', 50000, 3, 'Chicago'),
+(104, 'Diana', 80000, 2, 'San Francisco'),
+(105, 'Eve', 45000, NULL, 'Miami'),
+(106, 'Frank', 70000, 4, 'Boston'),
+(107, 'Grace', 55000, 3, 'Chicago');
+```
+
+---
+
+
+
+
+1. Display employee names along with their department names.
+2. Show each department’s employees sorted by salary (highest first).
+3. Find employees who work in “Chicago”.
+4. Show department name and total number of employees in each department.
+5. Display all employees and their department names (include those without a department).
+6. Find employees who are not assigned to any department.
+7. Display all departments and employees working in them (include departments with no employees).
+8. Show all employees and departments — including unmatched ones on both sides.
+9. Find total and average salary for each department.
+10. Count how many employees are in each city.
+11. List all employees ordered by salary descending.
+12. List all departments ordered alphabetically by name.
+
