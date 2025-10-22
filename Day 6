@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+-- create database employees_db;
+
+-- use employees_db;
+
+-- create table employees(
+-- emp_id int,
+-- first_name varchar(30),
+-- last_name varchar(20),
+-- salary decimal(10, 2)
+-- );
+
+-- alter table employees
+-- rename column first_name to emp_name;
+
+-- alter table employees
+-- drop column salary,
+-- drop column last_name;
+
+
+-- ADD COLUMN 
+-- alter table employees 
+-- add column department varchar(40);
+
+-- Alter / Modify Column(changing 
+-- the data type OR size) 
+-- field varchar ==> field date / int
+-- field varchar(30) ==> field varchar(50)
+
+-- alter table employees 
+-- modify column salary decimal(12, 2);
+
+-- alter table employees 
+-- modify column last_name varchar(40);
+
+
+
+
+use employees_db;
+
+-- grant create, select on employees
+-- to "firstuser";
+-- flush privileges;
+
+-- grant create on students_db.*
+-- to "firstuser";
+-- flush privileges;
+
+
+-- grant create on students_db.*
+-- to "firstuser";
+
+revoke select on employees from "firstuser";
+
+
+
+
+
