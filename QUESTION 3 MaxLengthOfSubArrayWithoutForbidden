@@ -1,0 +1,33 @@
+package firstprojectt;
+
+public class MaxLengthOfSubArrayWithoutForbidden {
+
+	public static void main(String[] args) {
+		
+		int[] data = { 1, 5, 3, 6, 45, 7, 3, 5, 6 };
+		int forbidden = 3;
+		
+		int windowLeft = 0;
+		int maxLength = 0;
+		int windowLength = 0;
+		
+		for(int windowRight = 0; 
+				windowRight < data.length;
+				windowRight++)
+		{
+			if(data[windowRight] == 3)
+			{
+				windowLeft = windowRight + 1;
+			}
+			else
+			{
+				windowLength = windowRight - windowLeft + 1;
+				maxLength = Math.max(maxLength, windowLength);
+			}
+		}
+		
+		System.out.println(maxLength);
+
+	}
+
+}
