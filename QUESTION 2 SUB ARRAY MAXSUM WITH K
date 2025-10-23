@@ -1,0 +1,32 @@
+package firstprojectt;
+
+import java.awt.Window;
+
+public class SubArrayOfSizeK {
+	public static void main(String[] args) {
+		
+		int[] data = {43,  1,  5,  48,  3,  2};
+		int k = 3;
+		
+		int windowLeft = 0;
+		int windowSum = 0; //8
+		int maxSum = 0;//8
+		
+		for(int windowRight = 0; 
+				windowRight < data.length; windowRight++ )
+		{
+			windowSum = windowSum + data[windowRight];
+			
+			if(windowRight >= k - 1)
+			{
+				maxSum = Math.max(maxSum, windowSum);
+				windowSum = windowSum - data[windowLeft];
+				windowLeft++;
+			}
+		}
+		
+		System.out.println(maxSum);
+		
+	}
+
+}
