@@ -1,0 +1,57 @@
+package firstprojectt;
+
+import java.util.HashSet;
+
+public class MaxVowlesInASubString {
+
+	public static void main(String[] args) {
+		
+		String data = "abciiydef";
+		int windowVowelsCount = 0;
+		int maxVowelsCount = 0;
+		int windowLeft = 0;
+		int k = 3;
+		
+		HashSet set = new HashSet();
+		set.add('a');
+		set.add('e');
+		set.add('i');
+		set.add('o');
+		set.add('u');
+		
+		
+		for(int windowRight = 0; 
+				windowRight < data.length();
+				windowRight++)
+				{
+		
+//					"abciiidef"
+					
+					if(set.contains(data.charAt(windowRight)))
+					{
+						windowVowelsCount++;
+						
+					}
+					
+				if(windowRight >= k - 1)
+				{
+						maxVowelsCount = Math
+								.max(maxVowelsCount, 
+								windowVowelsCount);
+				
+					// remove the left character
+					if(set.contains(data.charAt(windowLeft)))
+					{
+						windowVowelsCount--;
+					}
+						
+					windowLeft++;
+				}
+				
+				}
+		System.out.println(maxVowelsCount);
+				
+
+	}
+
+}
