@@ -1,0 +1,44 @@
+package firstprojectt;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
+public class GroupedAnagram {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, ArrayList<String>> map = 
+				new HashMap<String, ArrayList<String>>();
+		
+		String[] data = {"eat", "tea", "tan", 
+				"ate", "nat", "bat"};
+		
+		for(String str : data)
+		{
+//			"eat" ==> ["e", "a", "t"]
+			char[] charArr = str.toCharArray();
+			Arrays.sort(charArr);
+//			['e', 'a', 't'] ==> ['a', 'e', 't']
+			
+			String sortedStr = new String(charArr);
+			
+			if(!map.containsKey(sortedStr))
+			{
+				map.put
+				(sortedStr, new ArrayList());
+			}
+	
+			map.get(sortedStr).add(str);
+					
+		}
+
+		
+		
+		System.out.println(
+				new ArrayList<>(map.values()));
+		
+
+	}
+
+}
