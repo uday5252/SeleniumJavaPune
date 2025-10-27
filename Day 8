@@ -100,3 +100,179 @@ public class Encapsulation {
 		
 		System.out.println(holderName);
 		System.out.println(intitalBalance);
+===================================================
+package firstprojectt;
+
+// ABSTRACT CLASS
+abstract class Vehicle
+{
+	// CONCRETE METHOD
+	public void engine()
+	{
+		System.out.println("Every vehicle has a engine!");
+	}
+	
+	// ABSTRACT METHOD	
+	abstract public void noOfWheels();
+}
+
+class Bike extends Vehicle
+{
+
+	public void noOfWheels() {
+		System.out.println("Bike has 2 wheels!");		
+	}
+	
+}
+
+class Car extends Vehicle
+{
+	public void noOfWheels() {
+		System.out.println("Car has 4 wheels!");
+		
+	}
+	
+}
+
+public class Abstraction {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+===============================================
+package firstprojectt;
+
+interface Database
+{
+	abstract public void connect();
+	abstract public void save();
+	abstract public void read();
+}
+
+class Oracle implements Database
+{
+
+	
+	public void connect() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void save() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	
+	public void read() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+
+public class InterfaceExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
+============================================
+package firstprojectt;
+
+class A
+{
+	public void display()
+	{
+		System.out.println("I am from A class display method!");
+	}
+}
+
+class B
+{
+	public void display()
+	{
+		System.out.println("I am from B class display method!");
+	}
+}
+
+//Multiple Inheritance 
+class C extends A,B
+{
+	
+}
+
+public class Scenarios {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		C c = new C();
+		c.display();
+	}
+
+}
+
+=====================================
+package firstprojectt;
+
+class AA
+{
+	public void display()
+	{
+		System.out.println("Hello");
+	}
+}
+
+interface BB
+{
+	public void first();
+	public void second();
+}
+
+//class CC extends AA implements BB
+class CC implements BB extends AA
+{
+
+	@Override
+	public void first() {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void second() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}
+
+
+public class Scenario2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		AA a = new AA();
+		a.display();
+	
+	}
+
+}
+
+=====================================
+1) Multiple inheritance is not possible using classes.
+2) Extends can be used between 2 interfaces OR 2 classes.
+3) One interface can extend multiple interfaces.
+4) One class cannot extend multiple java classes.
+5) One class can implement multiple interfaces.
+6) One class should extend a class and then implement
+a interface.
