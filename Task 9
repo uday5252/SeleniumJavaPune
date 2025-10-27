@@ -1,0 +1,133 @@
+
+
+ 1. Serial Multiplier
+
+Scenario:
+You are designing a smart calculator for an electronics company. This calculator multiplies component values like resistances or currents.
+
+Question:
+Create a class `SerialMultiplier` that can multiply 2, 3, 4, or 5 numbers.
+Use constructor overloading so that each constructor performs multiplication for the given number of inputs.
+Display the result each time multiplication is performed.
+
+Example:
+
+```
+SerialMultiplier(3, 4) → Output: 12  
+SerialMultiplier(2, 3, 4) → Output: 24
+```
+
+---
+
+ 2. Shapes Area
+
+Scenario:
+You are developing a graphics design tool that helps users measure shapes they draw on the canvas.
+Each shape (Circle, Rectangle, Square) should calculate its area accurately.
+
+Question:
+Create classes `Circle`, `Rectangle`, and `Square`.
+Each class should have private fields for dimensions (like radius, width, height).
+Provide constructors to initialize these fields.
+Write a `getArea()` method that returns the ceiling (rounded up) value of the area.
+Use `Math.PI` and `Math.ceil()` where needed.
+
+---
+
+ 3. Shapes Color
+
+Scenario:
+You are working on a drawing application where users can save and duplicate colored shapes.
+
+Question:
+Create a class `Shape` that stores and manages:
+
+* The type of shape (e.g., “Circle”, “Square”)
+* The color of the shape (e.g., “Red”, “Blue”)
+
+Include:
+
+* A constructor for initializing type and color
+* Getter and setter methods for both fields
+* A `cloneShape()` method that returns a new Shape object with the same type and color
+
+---
+
+ 4. Stock Prediction
+
+Scenario:
+You are creating a finance app that predicts future stock prices based on current data.
+
+Question:
+Design a class `StockPrediction` that:
+
+* Stores gain and stockPrice values.
+* Contains overloaded methods `expectedValue()` that calculate the future price:
+
+  * Without parameters → return `stockPrice + gain`
+  * With `int transactionCost` → subtract the cost
+  * With `String transactionCost` → convert to integer and subtract it
+    Show how method overloading works for all cases.
+
+---
+
+ 5. Student Registration & Retrieval
+
+Scenario:
+Your college wants a student registration system that keeps track of students’ details and displays custom messages.
+
+Question:
+Create a class `Student` that stores:
+
+* name
+* enrollmentNumber
+* homeTown
+
+Provide methods to register student details and print them.
+Override a method called `getStatus()` to display a message like:
+
+> “John is my best friend and he is from Delhi. His favorite song is Perfect.”
+
+
+6. Car Inheritance using super()
+
+Question:
+Create a base class named `Car` with the following attributes:
+
+* `boolean powerSteering`
+* `String seatingCapacity`
+
+Create three subclasses — `WagonR`, `HondaCity`, and `InnovaCrysta` — each having an additional attribute `mileage`.
+Use `super()` to pass data from child class constructors to the parent class constructor.
+Write a program to display the mileage for each car.
+
+Expected Output Example:
+
+```
+WagonR Mileage: 22 kmpl
+HondaCity Mileage: 18 kmpl
+InnovaCrysta Mileage: 15 kmpl
+```
+
+---
+
+7. Levels of Friendship
+
+Question:
+Create a program to represent different levels of friendship using multilevel inheritance:
+
+* Class `Acquaintance` stores the person’s name.
+* Class `Friend` inherits from `Acquaintance` and adds `homeTown`.
+* Class `BestFriend` inherits from `Friend` and adds `favoriteSong`.
+
+Each class should have a method `getStatus()` that prints a personalized message about the relationship.
+Use `super()` to pass data between constructors.
+
+Expected Output Example:
+
+```
+Rahul is an acquaintance.
+Ankit is my friend from Delhi.
+Vijay is my best friend from Bangalore. His favorite song is Perfect.
+```
+
