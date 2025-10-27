@@ -34,3 +34,103 @@ Create a class called `ATM` that:
      Displays the current balance only if the PIN is correct.
 
 ---
+================================================================================
+package firstprojectt;
+
+class Animal
+{
+	public void sound()
+	{
+		System.out.println("Animal makes a sound!");
+	}
+	
+	public void eatsFood()
+	{
+		System.out.println("Every animal eats food!");
+	}
+}
+
+class Dog extends Animal
+{
+	@Override
+	public void sound()
+	{
+		System.out.println("Dog barks!!!");
+	}
+	
+	public void work()
+	{
+		System.out.println("Dog guards the home!");
+	}
+	
+}
+
+
+public class Inheritance1 {
+
+	public static void main(String[] args) {
+		
+		Dog d = new Dog();
+		d.sound();
+		
+	}
+
+}
+
+==========================================================================
+package firstprojectt;
+
+
+class Person
+{
+	String name;
+	int age;
+	
+	public Person(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	public void displayDetails()
+	{
+		System.out.println(this.name);
+		System.out.println(this.age);
+	}
+}
+
+class Employeee extends Person
+{
+	
+	String name;
+	int age;
+	int salary;
+	String companyName;
+	
+	public Employeee(String name, int age, int salary, String companyName) {
+		super(name, age);
+		this.salary = salary;
+		this.companyName = companyName;
+	}
+
+	
+	public void displayDetails()
+	{
+		super.displayDetails();
+		System.out.println(this.salary);
+		System.out.println(this.companyName);
+	}
+}
+
+public class Inheritance2 {
+
+	public static void main(String[] args) {
+		
+		Person p = new Person("Ramu", 35);
+		p.displayDetails();
+		System.out.println("--------------------");
+		Employeee e = new Employeee("Cook", 37, 50000, "ABC Company");
+		e.displayDetails();
+
+	}
+
+}
