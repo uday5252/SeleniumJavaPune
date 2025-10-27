@@ -38,3 +38,52 @@ public class Oops1 {
 	}
 
 }
+
+
+========================================
+
+package firstprojectt;
+
+
+class BankAccount
+{
+	int accountNumber;
+	private int accountBalance;
+	
+	public BankAccount(int accountNumber, int accountBalance)
+	{
+		this.accountNumber = accountNumber;
+		this.accountBalance = accountBalance;
+		
+	}
+	
+	public void setBalance(int recievedBalance)
+	{
+		if(recievedBalance > 0)
+		{
+			this.accountBalance = recievedBalance;
+		}
+	}
+	
+	public int getBalance()
+	{
+		return this.accountBalance;
+	}
+	
+}
+
+public class Encapsulation {
+
+	public static void main(String[] args) {
+		
+		BankAccount account = new BankAccount(111, 1000);
+		
+		account.setBalance(2000);
+		
+		int result = account.getBalance();
+		System.out.println(result);
+		
+		
+	}
+
+}
