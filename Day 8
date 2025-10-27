@@ -1,0 +1,40 @@
+package firstprojectt;
+
+class Employee
+{
+//	Instance Variable
+	String name;
+	int age;
+	static String company = "ABC Company";
+	
+//	Local Variables
+	public Employee(String name, int age, String company)
+	{
+		this.name = name;
+		this.age = age;
+	}
+	
+	public void displayDetails()
+	{
+		System.out.println(this.name);
+		System.out.println(this.age);
+//		System.out.println(company);
+//		System.out.println(Employee.company);
+	}
+}
+
+
+public class Oops1 {
+
+	public static void main(String[] args) {
+		
+		Employee e1 = new Employee("Raju", 40, "ABC Company");
+		Employee e2 = new Employee("Mark", 35, "ABC Company");
+		Employee e3 = new Employee("Cook", 44, "ABC Company");
+
+		e1.displayDetails();
+		e2.displayDetails();
+		e3.displayDetails();
+	}
+
+}
