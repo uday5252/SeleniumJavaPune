@@ -1,36 +1,36 @@
 
-#### 🏦 Scenario:
+ 🏦 Scenario:
 
-You have been asked to design a **basic ATM system** for a bank. The goal is to ensure **data security** by hiding sensitive information like the **PIN** and **account balance**.
-You must use **encapsulation** to protect these details and allow access only through specific methods.
+You have been asked to design a basic ATM system for a bank. The goal is to ensure data security by hiding sensitive information like the PIN and account balance.
+You must use encapsulation to protect these details and allow access only through specific methods.
 
 ---
 
-### 🧩 **Problem Description:**
+🧩 Problem Description:
 
 Create a class called `ATM` that:
 
-* Has **two private fields**:
+* Has two private fields:
 
   * `pin` (int) → represents the secret PIN of the user.
   * `balance` (double) → represents the user’s account balance.
 
-* Provides **the following methods**:
+* Provides the following methods:
 
   1. `checkPin(int inputPin)` →
      Verifies whether the entered PIN matches the stored one.
      If the PIN is correct, allow further transactions.
-     Otherwise, print **“Invalid PIN! Access Denied.”**
+     Otherwise, print “Invalid PIN! Access Denied.”
 
   2. `deposit(double amount)` →
-     Adds the given amount to the balance **only if the correct PIN was entered before**.
-     If not, print **“Please verify your PIN first.”**
+     Adds the given amount to the balance only if the correct PIN was entered before.
+     If not, print “Please verify your PIN first.”
 
   3. `withdraw(double amount)` →
-     Deducts the given amount from the balance **only if the correct PIN was entered and sufficient funds are available**.
+     Deducts the given amount from the balance only if the correct PIN was entered and sufficient funds are available.
      Otherwise, print the appropriate error message.
 
   4. `checkBalance()` →
-     Displays the current balance **only if the PIN is correct**.
+     Displays the current balance only if the PIN is correct.
 
 ---
