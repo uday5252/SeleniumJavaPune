@@ -87,3 +87,16 @@ public class Encapsulation {
 	}
 
 }
+
+=============================================================
+
+	Scanner scan = new Scanner(System.in);
+		
+		System.out.println("Enter the account holder name:-");
+		String holderName = scan.nextLine();
+		
+		System.out.println("Enter the intial amount balance:-");
+		int intitalBalance = scan.nextInt();
+		
+		System.out.println(holderName);
+		System.out.println(intitalBalance);
