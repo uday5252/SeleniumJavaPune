@@ -1,0 +1,39 @@
+package firstprojectt;
+
+public class LinkedListExample4 {
+    class Node {
+        int data;
+        Node next;
+
+        Node(int data) {
+            this.data = data;
+        }
+    }
+
+    public static void main(String[] args) {
+        LinkedListExample4 list = new LinkedListExample4();
+
+        Node first = list.new Node(10);
+        Node second = list.new Node(20);
+        Node third = list.new Node(30);
+
+        first.next = second;
+        second.next = third;
+
+        Node head = first;
+
+        //  Create new node (100)
+        Node newNode = list.new Node(100);
+
+        // Insert 100 between 10 and 20
+        newNode.next = first.next; // 100 -> 20
+        first.next = newNode;      // 10 -> 100
+
+        //  Print the list
+        Node current = head;
+        while (current != null) {
+            System.out.print(current.data + " -> ");
+            current = current.next;
+        }
+    }
+}
