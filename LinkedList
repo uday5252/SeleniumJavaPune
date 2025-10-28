@@ -1,0 +1,42 @@
+package com.abc.demo;
+
+import com.abc.demo.LinkedListNodeCreation.Node;
+
+class LinkedListNodeCreation
+{
+	class Node
+	{
+		int val;
+		Node next;
+		
+		public Node(int val) {
+			this.val = val;
+		}	
+	}
+}
+
+public class Third {
+
+	public static void main(String[] args) {
+
+		LinkedListNodeCreation l = 
+				new LinkedListNodeCreation();
+		
+		Node head = l.new Node(10);
+		Node second = l.new Node(20);		
+		Node third = l.new Node(30);
+		
+		head.next = second;
+		second.next = third;
+		
+		Node current = head;
+		
+		while(current != null)
+		{
+			System.out.print(current.val + "-->");
+			current = current.next;
+		}
+		System.out.print("null");
+	}
+
+}
