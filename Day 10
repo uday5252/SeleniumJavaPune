@@ -1,0 +1,133 @@
+package com.abc.demo;
+
+import java.util.Iterator;
+import java.util.LinkedList;
+
+public class Sixth {
+
+	public static void main(String[] args) {
+		
+
+		
+	   	LinkedList l = new LinkedList();
+	   	
+	   	l.add(10);
+	   	l.add(20);
+	   	l.add(30);
+		l.add("Raju");
+		
+//		for(Object i  : l)
+//		  {
+//		   	System.out.println(i);
+//		  }
+		
+//		iterators are used to read the data either in forward
+//		or backward direction
+		
+		Iterator data = l.descendingIterator();
+		
+		while(data.hasNext())
+		{
+			System.out.println(data.next());
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+//	   	
+//	   	for(Object i  : l)
+//	   	{
+//	   		System.out.println(i);
+//	   	}
+		
+//		List<Integer> l = new LinkedList<Integer>();
+//	   	
+//	   	l.add(10);
+//	   	l.add(20);
+//	   	l.add(30);
+//	   	
+//	   	for(int i  : l)
+//	   	{
+//	   		System.out.println(i);
+//	   	}
+	   	
+//	   	l.removeFirst();
+//	   	l.removeLast();
+	   	
+//	   	System.out.println(l);
+	}
+
+}
+
+=============================================
+package com.abc.demo;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+
+public class Seventh {
+
+	public static void main(String[] args) {
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		
+		map.put("name", "Raju");
+		map.put("age", 30);
+		map.put("city", "Mumbai");
+		map.put("companyName", "ABC Company");
+		
+//		System.out.println(map.get("name"));
+//		System.out.println(map.getOrDefault("name", "Mary"));
+//		System.out.println(map.keySet());
+//		System.out.println(map.values());
+//		System.out.println(map.containsKey("city"));
+//		System.out.println(map.containsValue("Bangalore"));
+		
+//		map.remove("city");
+//		System.out.println(map);
+		
+//		map.put("name", "Mary");
+//		System.out.println(map);
+		
+//		map.putIfAbsent("name", "Mary");
+//		System.out.println(map);
+		
+//		map.replace("name", "Cook");
+//		System.out.println(map);
+//			OR
+//		map.put("name", "Cook");
+//		System.out.println(map);
+		
+//		System.out.println(map.size());
+//		System.out.println(map.isEmpty());
+		
+//		keySet() ==> keys
+//		values() ==> values
+//		entrySet() ==> keys and values
+		
+//		System.out.println(map.entrySet());
+//		[city=Mumbai, companyName=ABC Company, name=Raju, age=30]
+		
+		for( Map.Entry<String, Object> i : map.entrySet())
+		{
+			System.out.println(i.getKey()
+			+ " " + i.getValue());
+		}
+//		
+//		System.out.println(map);
+		
+//		LinkedHashMap map = new LinkedHashMap();
+//		map.put("city", "Mumbai");
+//		map.put("age", 30);
+//		map.put("companyName", "ABC Company");
+//		map.put("name", "Raju");
+//		
+//		System.out.println(map);
+	}
+
+}
