@@ -131,3 +131,93 @@ public class Seventh {
 	}
 
 }
+===================================================
+package com.abc.demo;
+
+import java.io.FileInputStream;
+
+public class Tenth {
+
+	public static void main(String[] args) 
+	{
+		System.out.println("Connected!");
+		
+		try
+		{
+			int[] arr = new int[5];
+			arr[0] = 10;
+			arr[1] = 20;
+			arr[2] = 30;
+			arr[3] = 40;
+			arr[4] = 50;
+			arr[5] = 60;
+					
+}
+		
+		catch(ArrayIndexOutOfBoundsException e)
+		{
+			System.out.println("Index values should"
+					+ " not be out of the created range!");
+			
+			System.out.println(10 / 0);
+			
+		}
+		
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+		
+//		Resource de-allocation code
+		
+		finally {
+			System.out.println("Disconnected!");
+		}
+		
+	}
+}
+========================================================
+package com.abc.demo;
+
+class InvalidAmountException extends Exception
+{
+	String message;
+	
+	public InvalidAmountException(String message)
+	{
+		super(message);
+	}
+}
+
+class BankAccount
+{
+	int balance = 5000;
+	
+	public void withdraw(int amount) throws Exception
+	{
+		if(amount > this.balance )
+		{
+//			System.out.println("Please enter valid amount!");
+			throw new InvalidAmountException("Please enter valid amount!");
+		}
+		this.balance = this.balance - amount;
+	}
+}
+
+public class Eleven {
+
+	public static void main(String[] args) {
+		
+		BankAccount account = new BankAccount();
+		try {
+			account.withdraw(12000);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+		System.out.println(account.balance);
+		System.out.println("hello");
+		System.out.println("welcome");
+		
+	}
+
+}
