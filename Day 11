@@ -126,3 +126,99 @@ public class First {
 		
 	}
 }
+
+==========================================================
+//		* ==> zero or more times
+//		Pattern p = Pattern.compile("a*");
+//		Matcher m = p.matcher("aaabbbaaaaa");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		* ==> one or more times
+//		Pattern p = Pattern.compile("a+");
+//		Matcher m = p.matcher("aaababaaaaa");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		? ==> zero or 1
+//		Pattern p = Pattern.compile("a?");
+//		Matcher m = p.matcher("aaababaaaaa");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("a{2}");
+//		Matcher m = p.matcher("aaababaaaaa");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("a{2,3}");
+//		Matcher m = p.matcher("aaababaaaaa");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		. ==> exactly one character	
+//		Pattern p = Pattern.compile(".at");
+//		Matcher m = p.matcher("cat rat mat abc");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		word boundary
+//		Pattern p = Pattern.compile("\\bcat\\b");
+//		Matcher m = p.matcher("cat rat mat abc");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("^cat$");
+//		Matcher m = p.matcher("cat rat mat abc");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\bc..t\\b");
+//		Matcher m = p.matcher("cat caat caft rat mat abc");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		+, ?, * ==> (quantifiers) 
+		
+//		a+, a?, a* ==> greedy quantifiers
+//		a+?, a??, a*? ==> lazy quantifiers
+				
+		
+
+		
+//		Pattern p = Pattern.compile("\\bc.??t\\b");
+//		Matcher m = p.matcher("cat caat caft rat mat abc");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Write a regular expression to check
+//		whether the website URL is correct
+//		or not
+		
+//		https or http://www.amazon.com or org or in
+			
+		
+		Pattern p = Pattern.compile("^(https?):\\/\\/www\\.[a-z.]+\\.(com|org|in)$");
+		Matcher m = p.matcher("http://www.amazon.in amazon");
+		System.out.println(m.find());
+	}
