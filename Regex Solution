@@ -59,54 +59,6 @@ extract all matches for each regex and store them in a map.
 
 
 
-
-java
-import java.util.*;
-import java.util.regex.*;
-
-public class RegexTextParser {
-
-    // Function: Parse text using multiple regex patterns
-    public static Map<String, List<String>> parseText(String text, List<String> regexes) {
-        Map<String, List<String>> resultMap = new HashMap<>();
-
-        for (String regex : regexes) {
-            Pattern pattern = Pattern.compile(regex);
-            Matcher matcher = pattern.matcher(text);
-
-            List<String> matches = new ArrayList<>();
-            while (matcher.find()) {
-                matches.add(matcher.group());
-            }
-
-            resultMap.put(regex, matches);
-        }
-
-        return resultMap;
-    }
-
-    public static void main(String[] args) {
-        String text = "hello 123, world 456";
-
-        List<String> regexes = new ArrayList<>();
-        regexes.add("\\d+"); // digits
-        regexes.add("\\w+"); // words
-
-        Map<String, List<String>> result = parseText(text, regexes);
-        System.out.println(result);
-    }
-}
-
-
-
-
-Output
-
-
-{\d+=[123, 456], \w+=[hello, world]}
-
-
-
 import java.util.*;
 import java.util.regex.*;
 
@@ -118,7 +70,7 @@ public class RegexTextParser {
         for (String regex : regexes) {
             String actualRegex = regex;
 
-            // 👇 modify only for \w+ (so it captures only words, not numbers)
+           
             if (regex.equals("\\w+")) {
                 actualRegex = "[A-Za-z]+"; // only alphabetic words
             }
