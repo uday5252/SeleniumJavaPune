@@ -1,0 +1,128 @@
+package com.abc.regex;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class First {
+
+	public static void main(String[] args) {
+		
+//		Pattern p = Pattern.compile("Hello", Pattern.CASE_INSENSITIVE);
+//		Matcher m = p.matcher("hello world");
+//		boolean result = m.find();
+//		System.out.println(result);
+		
+//		Pattern p = Pattern.compile("learning");
+//		Matcher m = p.matcher("we are learning java and "
+//				+ "learning regular expression");
+//		
+//		boolean result = m.find()
+//		while(result)
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("[aeiou]");
+//		Matcher m = p.matcher("pune");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+		
+//		Pattern p = Pattern.compile("[^aeiou]");
+//		Matcher m = p.matcher("pune");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		0 ==> 9 ==> 
+//		[0123456789] ==> [0-9] ==> \d
+//		Pattern p = Pattern.compile("[^0-9]");
+//		Matcher m = p.matcher("Raju34878gkgk");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\d");
+//		Matcher m = p.matcher("Raju34878gkgk");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("[a-r]");
+//		Matcher m = p.matcher("Raju34878gkgk");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("[a-zA-Z]");
+//		Matcher m = p.matcher("Raju34878gkgk");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+//		Pattern p = Pattern.compile("[^a-zA-Z0-9]");
+//		Matcher m = p.matcher("Raju34878gkgk%$!");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		[a-zA-Z0-9] ==> \w
+//		Pattern p = Pattern.compile("\\w");
+//		Matcher m = p.matcher("Raju34878gkgk%$!");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\W");
+//		Matcher m = p.matcher("Raju34878gkgk%$!");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\s");
+//		Matcher m = p.matcher("Raj u34  878gkgk%$!");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\S");
+//		Matcher m = p.matcher("Raj u34  878gkgk%$!");
+//		while(m.find())
+//		{
+//			System.out.println(m.group());
+//		}
+		
+//		Pattern p = Pattern.compile("\\s");
+//		Matcher m = p.matcher("Raj u34  878gkgk%$!");
+//		while(m.find()) 
+//		{
+//			System.out.println(m.group() + "" + "Hello");
+//		}
+		
+//		Write a Regular Expression to check
+//		whether the mobile no format is valid or not
+		
+		
+//		Pattern p = Pattern.compile("[6-9]\\d{9}");
+//		Matcher m = p.matcher("9113239065");
+//		System.out.println(m.find());
+	
+		Pattern p = Pattern.compile("[a-z][A-Z][0-5]");
+		Matcher m = p.matcher("RaRuh5434");
+		while(m.find())
+		{
+			System.out.println(m.group());
+		}
+		
+	}
+}
