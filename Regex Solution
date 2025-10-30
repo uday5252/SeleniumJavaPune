@@ -1,0 +1,106 @@
+
+
+1️⃣ Extract Dates
+
+Goal: Find all dates in format `MM/DD/YYYY`
+(e.g. `01/15/2022`)
+
+
+
+
+
+java
+import java.util.*;
+import java.util.regex.*;
+
+public class ExtractDates {
+    
+    // Function: Extract all dates from given text
+    public static List<String> extractDates(String text) {
+        List<String> dates = new ArrayList<>();
+        
+        // Regex for MM/DD/YYYY
+        String regex = "\\b(0[1-9]|1[0-2])/(0[1-9]|[12][0-9]|3[01])/\\d{4}\\b";
+        
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(text);
+        
+        while (matcher.find()) {
+            dates.add(matcher.group());
+        }
+        
+        return dates;
+    }
+
+    public static void main(String[] args) {
+        String text = "Important dates: 01/15/2022, 02/28/2022, and 03/10/2022.";
+        List<String> result = extractDates(text);
+        System.out.println(result);
+    }
+}
+
+
+
+
+Output
+
+
+[01/15/2022, 02/28/2022, 03/10/2022]
+
+
+
+
+2️⃣ Regex-based Text Parser
+
+Goal:
+For a given text and list of regexes,
+extract all matches for each regex and store them in a map.
+
+
+
+
+
+java
+import java.util.*;
+import java.util.regex.*;
+
+public class RegexTextParser {
+
+    // Function: Parse text using multiple regex patterns
+    public static Map<String, List<String>> parseText(String text, List<String> regexes) {
+        Map<String, List<String>> resultMap = new HashMap<>();
+
+        for (String regex : regexes) {
+            Pattern pattern = Pattern.compile(regex);
+            Matcher matcher = pattern.matcher(text);
+
+            List<String> matches = new ArrayList<>();
+            while (matcher.find()) {
+                matches.add(matcher.group());
+            }
+
+            resultMap.put(regex, matches);
+        }
+
+        return resultMap;
+    }
+
+    public static void main(String[] args) {
+        String text = "hello 123, world 456";
+
+        List<String> regexes = new ArrayList<>();
+        regexes.add("\\d+"); // digits
+        regexes.add("\\w+"); // words
+
+        Map<String, List<String>> result = parseText(text, regexes);
+        System.out.println(result);
+    }
+}
+
+
+
+
+Output
+
+
+{\d+=[123, 456], \w+=[hello, world]}
