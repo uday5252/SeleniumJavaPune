@@ -113,3 +113,73 @@ class Solution {
         
     }
 }
+===============
+SAME TREE
+ Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(p);
+        queue.add(q);
+
+        while (!queue.isEmpty()) {
+            TreeNode node1 = queue.poll();
+            TreeNode node2 = queue.poll();
+
+            // ✅ Case 1: both nodes are null
+            // That means both subtrees are empty at this position → so continue checking next nodes
+            if (node1 == null && node2 == null) {
+                continue;
+            }
+
+            // ✅ Case 2: one node is null but the other is not
+            // That means one tree ended earlier → so they are different
+            if (node1 == null && node2 != null) {
+                return false;
+            }
+
+            if (node1 != null && node2 == null) {
+                return false;
+            }
+
+            // ✅ Case 3: both are non-null but have different values
+            if (node1.val != node2.val) {
+                return false;
+            }
+
+            // ✅ Case 4: both are non-null and have same value
+            // → add their children to queue for further comparison
+            queue.add(node1.left);
+            queue.add(node2.left);
+            queue.add(node1.right);
+            queue.add(node2.right);
+        }
+
+        // ✅ If the loop ends without finding any mismatch
+        // That means both trees are identical
+        return true;
+====================================================
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Solution {
+    public boolean isSameTree(TreeNode p, TreeNode q) {
+       
+       if( p == null && q == null)
+       {
+            return true;
+       }
+
+       if( (p != null && q == null)
+       || 
+       ( p == null && q != null)
+       || ( p.val != q.val) )
+       {
+            return false;
+       }
+
+       boolean leftResult = isSameTree(p.left, q.left);
+       boolean rightResult = isSameTree(p.right, q.right);
+
+      return leftResult && rightResult;
+        
+
+    }
+}
