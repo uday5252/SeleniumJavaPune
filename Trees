@@ -1,0 +1,63 @@
+MAXIMUM DEPTH OF BINARY TREE
+package com.abc.trees;
+
+class TreeNode
+{
+	int value;
+	TreeNode leftNode;
+	TreeNode rightNode;
+	
+	public TreeNode(int value) {
+		super();
+		this.value = value;
+		this.leftNode = null;
+		this.rightNode = null;
+	}
+	
+	public static int findMaxDepth(TreeNode rootNode)
+	{
+
+//		Base Conditionm
+		if(rootNode == null)
+		{
+			return 0;
+		}
+		
+		int leftValue = TreeNode.findMaxDepth(rootNode.leftNode);
+		int rightValue = TreeNode.findMaxDepth(rootNode.rightNode);
+		
+		return Math.max(leftValue, rightValue) + 1;
+	}
+	
+	
+}
+
+
+public class FirstExample {
+
+	public static void main(String[] args) {
+		
+		TreeNode rootNode = new TreeNode(1);
+		TreeNode secondNode = new TreeNode(2);
+		TreeNode thirdNode = new TreeNode(3);
+		TreeNode fourthNode = new TreeNode(4);
+		TreeNode fifthNode = new TreeNode(5);
+		TreeNode sixthNode = new TreeNode(6);
+		TreeNode seventhNode = new TreeNode(7);
+
+		
+		rootNode.leftNode = secondNode;
+		rootNode.rightNode = thirdNode;
+		
+		secondNode.leftNode = fourthNode;
+		secondNode.rightNode = fifthNode;
+		
+		thirdNode.leftNode = sixthNode;
+		thirdNode.rightNode = seventhNode;
+		
+		
+		int maxDepth = TreeNode.findMaxDepth(rootNode);
+		System.out.println(maxDepth);
+	}
+
+}
