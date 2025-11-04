@@ -318,3 +318,44 @@ class Solution {
 
     }
 }
+===========================================
+VALID BST
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    public boolean isValidBST(TreeNode root) {
+        return isVerify(root, Long.MIN_VALUE, Long.MAX_VALUE);
+        
+        // isVerify(8, -infinity, +infinity);
+    }
+
+    public boolean isVerify(TreeNode recievedNode, long min, long max)
+    {
+        if(recievedNode == null)
+        {
+            return true;
+        }
+        // recievedNode = 3, min = -infinity, max = 8
+        // Logic ==> is that node withing that min and max range or not
+        if(recievedNode.val <= min || recievedNode.val >= max)
+        {
+            return false;
+        } 
+
+        return isVerify(recievedNode.left, min, recievedNode.val) 
+        && isVerify(recievedNode.right, recievedNode.val, max);
+    }
+}
