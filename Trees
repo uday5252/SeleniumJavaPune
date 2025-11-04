@@ -392,3 +392,104 @@ class Solution {
 
     }
 }
+================================================================
+SERIALIZE AND DESERIALIZE BINARY TREE
+/**
+ * Definition for a binary tree node.
+ * public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode(int x) { val = x; }
+ * }
+ */
+
+import java.util.*;
+
+public class Codec {
+
+    public String serialize(TreeNode root)
+    {
+        if(root == null)
+        {
+            return "null";
+        }
+
+        StringBuffer sb = new StringBuffer("");
+        Queue<TreeNode> queue = new LinkedList();
+        queue.add(root);
+
+        while(!queue.isEmpty())
+        {
+            
+            int queueSize = queue.size();
+
+            for(int i = 0; i < queueSize; i++)
+            {
+                TreeNode recievedNode = queue.poll();
+            
+                if(recievedNode == null)
+                {
+                    sb.append("null,");
+                }
+                else
+                {
+                    sb.append(recievedNode.val).append(",");
+                    queue.add(recievedNode.left);
+                    queue.add(recievedNode.right);
+                }
+            }
+        }
+        return sb.toString();
+    }
+
+
+    public TreeNode deserialize(String data)
+    {
+        data = "null"
+
+        if(data == "null")
+        {
+            return null;
+        }
+
+        String[] result = data.split(",");
+        int rootElement = Integer.parseInt(result[0]);
+
+        TreeNode rootNode = new TreeNode(rootElement);
+
+        Queue<TreeNode> queue = new LinkedList();
+
+        queue.add(rootNode);
+
+        int i = 1;
+        while(!queue.isEmpty())
+        {
+            TreeNode recievedNode = queue.poll();
+
+            if(!result[i].equals("null"))
+            {
+                 recievedNode.left = new TreeNode(Integer.parseInt(result[i]));
+                 queue.add(recievedNode.left);
+            }
+            i++;
+
+            if(!result[i].equals("null"))
+            {
+                recievedNode.right = new TreeNode(Integer.parseInt(result[i]));
+                queue.add(recievedNode.right);
+            }
+            i++;
+            
+           
+            
+        }
+        
+
+
+
+        return rootNode;
+    }
+    
+    
+}
