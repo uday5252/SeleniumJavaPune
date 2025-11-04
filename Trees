@@ -493,3 +493,35 @@ public class Codec {
     
     
 }
+==========================================
+LAST STONE WEIGHT
+class Solution {
+    public int lastStoneWeight(int[] stones) {
+        
+        PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());
+
+        for( int i : stones)
+        {
+            pq.add(i);
+        }
+
+        // [ 2, 7, 4, 1, 8, 1 ]
+
+        while(pq.size()  > 1)
+        {
+            int p = pq.poll();
+            int q = pq.poll();
+
+            if(p != q)
+            {
+                pq.add(p - q);
+            }
+
+        }
+
+        return pq.isEmpty() ? 0 : pq.peek();
+        
+
+
+    }
+}
