@@ -1,0 +1,33 @@
+MINIMUM OPERATIONS TO HALVE ARRAY SUM
+
+class Solution {
+    public int halveArray(int[] nums) {
+        
+        double initialTotalArraySum = 0;
+
+        PriorityQueue<Double> maxHeap = new PriorityQueue<Double>(Collections.reverseOrder());
+        
+        for( double i : nums)
+        {
+            initialTotalArraySum += i;
+            maxHeap.add(i);
+        }
+
+        double initialTotalArraySumHalf = initialTotalArraySum / 2;
+        double newHeapArraySum = 0.0; //9.5 + 4.75 ==> 14.25 + 4 => 18.25
+        // [19.0, 5.0, 8.0, 1.0]
+
+        int operationCount = 0;
+
+        while(newHeapArraySum < initialTotalArraySumHalf)
+        {
+            double maxElement = maxHeap.poll();
+            maxHeap.add(maxElement / 2);
+            newHeapArraySum = newHeapArraySum + maxElement / 2;
+            operationCount++;
+            System.out.println(operationCount);
+        }
+
+        return operationCount;
+    }
+}
