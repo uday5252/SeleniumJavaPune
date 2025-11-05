@@ -42,3 +42,98 @@ Write a Java program to:
  ["10:00", "ERROR", "retry failed"]
 ]
 ```
+===================================================================
+package com.abc.heaps;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
+//class SortByDateAndTime implements Comparator<List<String>>
+//{
+//
+//	@Override
+//	public int compare(List<String> o1, List<String> o2) {
+//		
+//		DateTimeFormatter format = 
+//				DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+//		
+////		o1 = ["01-01-2023", "01:30", "CRITICAL", "failed"]
+////		o2 = ["01-01-2023", "14:00", "ERROR", "failed"]
+//		
+//		String s1 = o1.get(0)+ " "+o1.get(1);
+//		String s2 = o2.get(0)+ " "+o2.get(1);
+//		
+//		LocalDateTime dateAndTime1 = 
+//				LocalDateTime.parse(s1, format);
+//		LocalDateTime dateAndTime2 = 
+//				LocalDateTime.parse(s2, format);
+//		
+//		return dateAndTime2.compareTo(dateAndTime1);	
+//		
+//	}
+//}
+
+public class Second {
+
+    public static void main(String[] args) {
+
+        // Create list of logs (List of List<String>)
+        List<List<String>> logs = new ArrayList<>();
+        
+
+        logs.add(Arrays.asList("01-01-2023", "01:31", "ERROR", "failed"));
+        logs.add(Arrays.asList("01-01-2023", "15:00", "INFO", "established"));
+        logs.add(Arrays.asList("01-01-2023", "01:30", "CRITICAL", "failed"));
+        logs.add(Arrays.asList("02-01-2023", "10:00", "CRITICAL", "system crash"));
+        logs.add(Arrays.asList("02-01-2023", "10:00", "ERROR", "retry failed"));
+
+        // Create new list to store filtered logs
+        List<List<String>> filteredLogs = new ArrayList<>();
+
+        // Filter logs with status ERROR or CRITICAL
+        for (List<String> log : logs) {
+            String status = log.get(2); // status is at index 2
+            if (status.equals("ERROR") || status.equals("CRITICAL")) {
+                filteredLogs.add(log);
+            }
+        }
+
+        
+        Collections.sort(filteredLogs, (List<String> o1, List<String> o2) ->
+        {
+        	DateTimeFormatter format = 
+    				DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+    		
+//    		o1 = ["01-01-2023", "01:30", "CRITICAL", "failed"]
+//    		o2 = ["01-01-2023", "14:00", "ERROR", "failed"]
+    		
+    		String s1 = o1.get(0)+ " "+o1.get(1);
+    		String s2 = o2.get(0)+ " "+o2.get(1);
+    		
+    		LocalDateTime dateAndTime1 = 
+    				LocalDateTime.parse(s1, format);
+    		LocalDateTime dateAndTime2 = 
+    				LocalDateTime.parse(s2, format);
+    		
+    		return dateAndTime2.compareTo(dateAndTime1);
+        });
+        
+        System.out.println(filteredLogs);
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+}
