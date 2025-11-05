@@ -1,0 +1,44 @@
+You are given AWS CloudWatch logs in the form of a list of lists.
+Each log entry contains:
+
+| Index | Meaning | Example      |
+| ----- | ------- | ------------ |
+| 0     | Time    | 14:00        |
+| 1     | Status  | ERROR / INFO |
+| 2     | Message | failed       |
+
+---
+
+ Task
+
+Write a Java program to:
+
+1. Filter only logs whose status is `"ERROR"` or `"CRITICAL"`.
+2. Return/print the filtered logs.
+
+---
+
+ Example Input
+
+```java
+[
+ ["14:00", "ERROR", "failed"],
+ ["15:00", "INFO", "established"],
+ ["01:30", "CRITICAL", "failed"],
+ ["10:00", "CRITICAL", "system crash"],
+ ["10:00", "ERROR", "retry failed"]
+]
+```
+
+---
+
+ Expected Output
+
+```java
+[
+ ["14:00", "ERROR", "failed"],
+ ["01:30", "CRITICAL", "failed"],
+ ["10:00", "CRITICAL", "system crash"],
+ ["10:00", "ERROR", "retry failed"]
+]
+```
