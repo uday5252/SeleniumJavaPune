@@ -31,3 +31,48 @@ class Solution {
         return operationCount;
     }
 }
+============================
+MEDIAN IN A DATA STREAM
+
+class MedianFinder {
+
+    // maxHeap stores the smaller half (largest element on top)
+    PriorityQueue<Integer> maxHeap;
+
+    // minHeap stores the larger half (smallest element on top)
+    PriorityQueue<Integer> minHeap;
+
+    public MedianFinder() {
+        // maxHeap = reverse order (acts like max-heap)
+        maxHeap = new PriorityQueue<>(Collections.reverseOrder());
+
+        // minHeap = normal heap (min-heap)
+        minHeap = new PriorityQueue<>();
+    }
+
+ public void addNum(int num) {
+
+        // Step 1: Insert into correct heap
+        if (maxHeap.isEmpty() || num <= maxHeap.peek()) {
+            maxHeap.add(num); // smaller elements
+        } else {
+            minHeap.add(num); // larger elements
+        }
+
+        // Step 2: Balance both heaps (difference should not exceed 1)
+        if (maxHeap.size() > minHeap.size() + 1) {
+            minHeap.add(maxHeap.poll()); // move one from maxHeap -> minHeap
+        } else if (minHeap.size() > maxHeap.size()) {
+            maxHeap.add(minHeap.poll()); // move one from minHeap -> maxHeap
+        }
+    }
+
+  public double findMedian() {
+        // If equal size, median = average of two middle values
+        if (maxHeap.size() == minHeap.size()) {
+            return (maxHeap.peek() + minHeap.peek()) / 2.0;
+        }
+
+        // Else maxHeap has the extra element
+        return maxHeap.peek();
+    }
