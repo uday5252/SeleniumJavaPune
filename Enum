@@ -1,0 +1,39 @@
+package package2;
+
+enum OrderStatus
+{
+	SHIPPED,
+	PLACED,
+	CANCLLED,
+	DELIVERED
+}
+
+class Order
+{
+	OrderStatus status;
+}
+
+public class Third {
+
+	public static void main(String[] args) {
+		
+		Order order = new Order();
+		order.status = OrderStatus.CANCLLED;
+		
+		if(order.status == OrderStatus.SHIPPED)
+		{
+			System.out.println("Order is shipped!");
+		}
+		else if(order.status == OrderStatus.CANCLLED)
+		{
+			System.out.println("Order is cancelled!");
+		}
+		else if(order.status == OrderStatus.DELIVERED)
+		{
+			System.out.println("Order is delivered!");
+		} 
+		
+
+	}
+
+}
